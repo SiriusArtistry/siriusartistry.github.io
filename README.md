@@ -1,1 +1,1 @@
-# siriusartistry.github.io
+# SiriusArtistry
