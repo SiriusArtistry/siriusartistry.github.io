@@ -1,13 +1,19 @@
 /* Set the body and html to full screen height */
 :root {
-    --main-color:#000;
-    --bg-color: #FFF;
-    --accent-color: #272727;
+	color-scheme: light dark;
+
+    --light-main-color:#000;
+    --light-bg-color: #FFF;
+    --light-accent-color: #272727;
+
+	--dark-main-color:#FFF;
+    --dark-bg-color: #111;
+    --light-accent-color: #AAA;
 }
 
 html, body {
 	height: 100%;
-	background: none var(--bg-color);
+	background: none light-dark(var(--light-bg-color),var(--dark-bg-color));
 	font-size: clamp( 16px, 20px, 4vw);
 }
 
@@ -24,8 +30,8 @@ a, a:active, a:focus, input:focus {
 body {
 	padding: 0;
 	margin: 0;
-	background: var(--bg-color);
-	color: var(--accent-color);
+	background: light-dark(var(--light-bg-color),var(--dark-bg-color));
+	color: light-dark(var(--light-accent-color),var(--dark-accent-color));
 	font-family: 'Roboto Mono', monospace;
 	font-size: 1em;
 }
@@ -97,17 +103,17 @@ h3 {
 	font-family: "Roboto", sans-serif;
 	font-size: 1em;
 	letter-spacing: 0.125em;
-	color: var(--main-color);
+	color: light-dark(var(--light-main-color),var(--dark-main-color));
 	line-height: 1.875em;
 }
 
 p a {
-	color: var(--accent-color);
-	border-bottom: 0.15em dashed var(--main-color);
+	color: light-dark(var(--light-accent-color),var(--dark-accent-color));
+	border-bottom: 0.15em dashed light-dark(var(--light-main-color),var(--dark-main-color));
 }
 
 p a:hover {
-	color: var(--main-color);
+	color: light-dark(var(--light-main-color),var(--dark-main-color));
 }
 
 .main-content p:last-child {
@@ -115,8 +121,8 @@ p a:hover {
 }
 
 p span {
-	color: var(--bg-color);
-	background: var(--main-color);
+	color: light-dark(var(--light-bg-color),var(--dark-bg-color));
+	background: light-dark(var(--light-main-color),var(--dark-main-color));
 	padding: 0.25em 0.5em;
 }
 
