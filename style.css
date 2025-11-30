@@ -21,6 +21,18 @@ body {
 	min-height: 100%;
 }
 
+img {
+  width: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .color-invertible {
+        filter: invert(100%);
+    }
+}
+
 /* Remove dotted borders around the links when clicked */
 a, a:active, a:focus, input:focus {
 	text-decoration: none !important;
