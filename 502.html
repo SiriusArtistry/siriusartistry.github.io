@@ -13,7 +13,22 @@
                         <p>
                             <span>Whoops</span>
                         <p>
-                            This site is down (for now)... <a href="#" onclick="window.close()"> head back</a>.
+                            This site is down (for now)... <a href="https://siriusartistry.io" onclick="goBackOrClose(event)"> head back</a>.
+
+                            <script>
+                            function goBackOrClose(e) {
+                                // If history exists, go back
+                                if (history.length > 1) {
+                                    e.preventDefault();
+                                    history.back();
+                                } 
+                                // If no history, try closing (works only if opened in new tab/window)
+                                else {
+                                    window.close();
+                                    // If window.close() fails (e.g., direct access), let the default href redirect occur
+                                }
+                            }
+                            </script>
                         </p>
 
                     </div>
